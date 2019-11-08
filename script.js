@@ -7,9 +7,11 @@ function getArtistInfo (artist){
         }
     }) 
         .then(response => response.json())
-        .then(responseArtist => console.log(responseArtist))
+        .then(responseArtist =>{
+            console.log(responseArtist)
+            let artistId = responseArtist.id
+            console.log (artistId)})
 
-    let artistId = responseArtist.id
-    console.log(artistId);
+    
 
 }
