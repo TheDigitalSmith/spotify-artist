@@ -10,7 +10,29 @@ function getArtistInfo (artist){
         .then(responseArtist =>{
             console.log(responseArtist)
             let artistId = responseArtist.id
-            console.log (artistId)})
+            console.log (artistId)
+        
+            var row = document.querySelector("#content");
+            row.innerHTML= "";
+
+            responseArtist.name.forEach(info => {
+                row.innerHTML += `
+                <div class="jumbotron" style = "background-image:url(${info.picture_big}) ">
+                    <p class="lead">${info.nb_fan}</p>
+                    <h1 class="display-4">${info.name}</h1>
+                    <a class="btn btn-primary btn-lg" href="#" role="button">OVERVIEW</a>
+                    <a class="btn btn-primary btn-lg" href="#" role="button">RELATED ARTISTS</a>
+                    <a class="btn btn-primary btn-lg" href="#" role="button">ABOUT</a>
+                </div>
+                <h2>TRACKS<h2>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                `
+            })
+        })
 
     
 
